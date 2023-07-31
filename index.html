@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Of Object</title>
+</head>git
+<body style="background-color: rgb(10 17 45); font-size: 24px;">
+    <pre style="font-weight: bold; color: rgb(67, 13, 118);">
+         "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] "
+    </pre>
+
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-1
+            "We are interested in retrieving only the students' names; all the names should be in caps.
+
+            ['JOHN', 'BABA', 'YAGA', 'WICK']"
+    </pre>
+
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        let studentNamesCaps = studentRecords.map(student => student.name.toUpperCase());
+        console.log(studentNamesCaps);
+    </pre>
+<hr>
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-2 
+            Suppose we have the same dataset as above but this time we want to get the details of students who scored
+            more than 50 marks.
+
+            [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]
+    </pre>
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        let students2 = studentRecords.filter(student => student.marks > 50);
+        console.log(students2);
+    </pre>
+    <hr>
+
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-3 
+            Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.
+    </pre>
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        let students3 = studentRecords.filter(student => student.marks > 50 && student.id > 120);
+        console.log(students3);
+    </pre>
+
+    <hr>
+
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-4 
+        Consider the same scenario we have discussed above, but this time we would like to know the sum total of
+        the marks of the students.
+    </pre>
+
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        let sumMarks = studentRecords.reduce((total, student) => total + student.marks, 0);
+        console.log(sumMarks);
+    </pre> 
+
+    <hr>
+
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-5 
+            This time we want to get only the names of the students who scored more than 50 marks from the same dataset
+            used above.
+    </pre>
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        let students5 = studentRecords.filter(student => student.marks > 50);
+
+        let namesOfStudents = students5.map(student => student.name);
+        console.log(namesOfStudents);
+    </pre>
+
+    <hr>
+
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-6 
+            This time we are required to print the sum of marks of the students with id > 120.
+    </pre>
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        let students6 = studentRecords.filter(student => student.id > 120);
+        let sumMarks = students6.reduce((total, student) => total + student.marks, 0);
+
+        console.log(sumMarks);
+    </pre>
+
+    <hr>
+
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-7 
+        This time we are required to print the total marks of the students with marks greater than 50 after a grace of 
+        15 marks has been added to those students who scored less than 50.
+    </pre>
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        let studentsGraceMarks = studentRecords.map(student => ({
+            ...student,
+            marks: student.marks < 50 ? student.marks + 15 : student.marks
+          }));
+          
+          let MarksGreaterThan50 = studentsGraceMarks.filter(student => student.marks > 50);
+          let sumMarksGreaterThan50 = MarksGreaterThan50.reduce((total, student) => total + student.marks, 0);
+          
+          console.log(sumMarksGreaterThan50);
+    </pre>
+
+    <hr>
+
+    <pre style="font-weight: bold; color: #3F51B5;">
+        Que-8 
+            Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects.
+            with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.
+    </pre>
+
+    <pre style="font-weight: bold; color: #C5CAE9;">
+        function addGraceMarks(student) {
+            if (student.marks < 50) {
+              student.marks += 15;
+            }
+            return student;
+          }
+          
+          let students = [
+            { name: 'Kartik', class: '10th', rollNo: 101, marks: 98 },
+            { name: 'rajesh', class: '9th', rollNo: 102, marks: 35 },
+            { name: 'ramesh', class: '11th', rollNo: 103, marks: 78 },
+            { name: 'chinki', class: '12th', rollNo: 104, marks: 42 },
+            { name: 'priti', class: '8th', rollNo: 105, marks: 65 },
+            { name: 'kajal', class: '11th', rollNo: 106, marks: 25 }
+          ];
+          
+        
+          let graceMarks = students.map(addGraceMarks);
+          
+          let students50 = graceMarks.filter(student => student.marks > 50);
+          
+          console.log(students50);
+   
+    </pre>
+
+
+</body>
+</html>
