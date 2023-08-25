@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Of Object</title>
-</head>git
+    <link rel="stylesheet" href="./style.css">
+</head>
 <body style="background-color: rgb(10 17 45); font-size: 24px;">
     <pre style="font-weight: bold; color: rgb(67, 13, 118);">
          "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
@@ -20,11 +21,15 @@
             ['JOHN', 'BABA', 'YAGA', 'WICK']"
     </pre>
 
+    
+
 
     <pre style="font-weight: bold; color: #C5CAE9;">
         let studentNamesCaps = studentRecords.map(student => student.name.toUpperCase());
         console.log(studentNamesCaps);
     </pre>
+
+    <div id="Que1"></div>
 <hr>
     <pre style="font-weight: bold; color: #3F51B5;">
         Que-2 
@@ -38,6 +43,8 @@
         let students2 = studentRecords.filter(student => student.marks > 50);
         console.log(students2);
     </pre>
+
+    <div id="Que2"></div>
     <hr>
 
     <pre style="font-weight: bold; color: #3F51B5;">
@@ -49,6 +56,8 @@
         let students3 = studentRecords.filter(student => student.marks > 50 && student.id > 120);
         console.log(students3);
     </pre>
+
+    <div id="Que3"></div>
 
     <hr>
 
@@ -63,6 +72,8 @@
         let sumMarks = studentRecords.reduce((total, student) => total + student.marks, 0);
         console.log(sumMarks);
     </pre> 
+
+    <div id="Que4"></div>
 
     <hr>
 
@@ -79,6 +90,8 @@
         console.log(namesOfStudents);
     </pre>
 
+    <div id="Que5"></div>
+
     <hr>
 
     <pre style="font-weight: bold; color: #3F51B5;">
@@ -93,6 +106,7 @@
         console.log(sumMarks);
     </pre>
 
+    <div id="Que6"></div>
     <hr>
 
     <pre style="font-weight: bold; color: #3F51B5;">
@@ -112,6 +126,8 @@
           
           console.log(sumMarksGreaterThan50);
     </pre>
+
+    <div id="Que7"></div>
 
     <hr>
 
@@ -147,6 +163,8 @@
    
     </pre>
 
+    <div id="Que8"></div>
 
+ <script src="./script.js"></script>
 </body>
 </html>
